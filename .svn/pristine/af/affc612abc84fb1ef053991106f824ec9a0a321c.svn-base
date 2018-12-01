@@ -1,0 +1,19 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+
+namespace mujubu.工艺
+{
+    public partial class 修改工序内容和数量 : Form
+    {
+        public 修改工序内容和数量()
+        {
+            InitializeComponent();
+        }
+    }
+}

@@ -1,0 +1,53 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+
+namespace mujubu.工艺
+{
+    public partial class 修改工序内容和数量 : Form
+    {
+        public string id;
+        public string lingjianmingcheng;
+        public 修改工序内容和数量(string id,string lingjianmingcheng)
+        {
+            InitializeComponent();
+            this.id = id;
+            this.lingjianmingcheng = lingjianmingcheng;
+        }
+        private void 修改工序内容和数量_Load(object sender, EventArgs e)
+        {
+            string sql = "select  顺序 from tb_gongxu_manage where 零件id='"+id+"'";
+            DataTable dt = SQLhelp.GetDataTable(sql, CommandType.Text);
+            foreach (DataRow dr in dt.Rows)
+            {
+                this.comboBoxEdit1.Properties.Items.Add(dr["顺序"].ToString());
+            }
+        }
+
+        private void comboBoxEdit1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.memoEdit1.Text = "";
+            this.textEdit1.Text = "";
+            this.textEdit2.Text= "";
+            string sql = "select  * from tb_gongxu_manage where 零件id='" + id + "'and 顺序='"+comboBoxEdit1.Text+"'";
+            DataTable dt1 = SQLhelp.GetDataTable(sql, CommandType.Text);
+            this.memoEdit1.Text = dt1.Rows[0]["工序内容"].ToString();
+            this.textEdit1.Text = dt1.Rows[0]["加工数量"].ToString();
+            this.textEdit2.Text = dt1.Rows[0]["金额单价"].ToString();
+           
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            string sql1 = "update tb_gongxu_manage set 工序内容='" + this.memoEdit1.Text.Trim() + "',加工数量='" + this.textEdit1.Text + "',金额单价='" + this.textEdit2.Text.Trim()+ "' where 零件id='" + id + "'and 顺序='" + comboBoxEdit1.Text + "'";
+            SQLhelp.ExecuteScalar(sql1, CommandType.Text);
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+        }
+    }
+}

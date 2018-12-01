@@ -1,0 +1,241 @@
+﻿namespace mujubu.taizhang
+{
+    partial class chakanbom1
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip();
+            this.查看工序ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.序号 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.编码 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.型号 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.名称 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.单位 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.数量 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.类型 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.库存数 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.要求到货时间 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.制造类型 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.备注 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.工艺 = new DevExpress.XtraGrid.Columns.GridColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // gridControl1
+            // 
+            this.gridControl1.ContextMenuStrip = this.contextMenuStrip1;
+            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl1.EmbeddedNavigator.ContextMenuStrip = this.contextMenuStrip1;
+            this.gridControl1.EmbeddedNavigator.ContextMenuStripChanged += new System.EventHandler(this.查看工序ToolStripMenuItem_Click);
+            this.gridControl1.Location = new System.Drawing.Point(0, 0);
+            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(549, 295);
+            this.gridControl1.TabIndex = 0;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.查看工序ToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 48);
+            // 
+            // 查看工序ToolStripMenuItem
+            // 
+            this.查看工序ToolStripMenuItem.Name = "查看工序ToolStripMenuItem";
+            this.查看工序ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.查看工序ToolStripMenuItem.Text = "查看工艺";
+            this.查看工序ToolStripMenuItem.Click += new System.EventHandler(this.查看工序ToolStripMenuItem_Click);
+            // 
+            // gridView1
+            // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.序号,
+            this.编码,
+            this.型号,
+            this.名称,
+            this.单位,
+            this.数量,
+            this.类型,
+            this.库存数,
+            this.要求到货时间,
+            this.制造类型,
+            this.备注,
+            this.工艺});
+            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.Name = "gridView1";
+            // 
+            // 序号
+            // 
+            this.序号.Caption = "序号";
+            this.序号.FieldName = "序号";
+            this.序号.Name = "序号";
+            this.序号.Visible = true;
+            this.序号.VisibleIndex = 0;
+            this.序号.Width = 42;
+            // 
+            // 编码
+            // 
+            this.编码.Caption = "编码";
+            this.编码.FieldName = "编码";
+            this.编码.Name = "编码";
+            this.编码.Visible = true;
+            this.编码.VisibleIndex = 1;
+            this.编码.Width = 42;
+            // 
+            // 型号
+            // 
+            this.型号.Caption = "型号";
+            this.型号.FieldName = "型号";
+            this.型号.Name = "型号";
+            this.型号.Visible = true;
+            this.型号.VisibleIndex = 2;
+            this.型号.Width = 42;
+            // 
+            // 名称
+            // 
+            this.名称.Caption = "名称";
+            this.名称.FieldName = "名称";
+            this.名称.Name = "名称";
+            this.名称.Visible = true;
+            this.名称.VisibleIndex = 3;
+            this.名称.Width = 42;
+            // 
+            // 单位
+            // 
+            this.单位.Caption = "单位";
+            this.单位.FieldName = "单位";
+            this.单位.Name = "单位";
+            this.单位.Visible = true;
+            this.单位.VisibleIndex = 4;
+            this.单位.Width = 42;
+            // 
+            // 数量
+            // 
+            this.数量.Caption = "数量";
+            this.数量.FieldName = "数量";
+            this.数量.Name = "数量";
+            this.数量.Visible = true;
+            this.数量.VisibleIndex = 5;
+            this.数量.Width = 42;
+            // 
+            // 类型
+            // 
+            this.类型.Caption = "类型";
+            this.类型.FieldName = "类型";
+            this.类型.Name = "类型";
+            this.类型.Visible = true;
+            this.类型.VisibleIndex = 6;
+            this.类型.Width = 42;
+            // 
+            // 库存数
+            // 
+            this.库存数.Caption = "库存数";
+            this.库存数.FieldName = "项目工令号";
+            this.库存数.Name = "库存数";
+            this.库存数.Visible = true;
+            this.库存数.VisibleIndex = 7;
+            this.库存数.Width = 42;
+            // 
+            // 要求到货时间
+            // 
+            this.要求到货时间.Caption = "要求到货日期";
+            this.要求到货时间.FieldName = "时间";
+            this.要求到货时间.Name = "要求到货时间";
+            this.要求到货时间.Visible = true;
+            this.要求到货时间.VisibleIndex = 8;
+            this.要求到货时间.Width = 54;
+            // 
+            // 制造类型
+            // 
+            this.制造类型.Caption = "制造类型";
+            this.制造类型.FieldName = "制造类型";
+            this.制造类型.Name = "制造类型";
+            this.制造类型.Visible = true;
+            this.制造类型.VisibleIndex = 9;
+            this.制造类型.Width = 30;
+            // 
+            // 备注
+            // 
+            this.备注.Caption = "备注";
+            this.备注.FieldName = "备注";
+            this.备注.Name = "备注";
+            this.备注.Visible = true;
+            this.备注.VisibleIndex = 10;
+            this.备注.Width = 32;
+            // 
+            // 工艺
+            // 
+            this.工艺.Caption = "工艺";
+            this.工艺.FieldName = "工艺";
+            this.工艺.Name = "工艺";
+            this.工艺.Visible = true;
+            this.工艺.VisibleIndex = 11;
+            this.工艺.Width = 79;
+            // 
+            // chakanbom1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(549, 295);
+            this.Controls.Add(this.gridControl1);
+            this.Name = "chakanbom1";
+            this.Text = "查看bom";
+            this.Load += new System.EventHandler(this.chakanbom1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Columns.GridColumn 序号;
+        private DevExpress.XtraGrid.Columns.GridColumn 编码;
+        private DevExpress.XtraGrid.Columns.GridColumn 型号;
+        private DevExpress.XtraGrid.Columns.GridColumn 名称;
+        private DevExpress.XtraGrid.Columns.GridColumn 单位;
+        private DevExpress.XtraGrid.Columns.GridColumn 数量;
+        private DevExpress.XtraGrid.Columns.GridColumn 类型;
+        private DevExpress.XtraGrid.Columns.GridColumn 库存数;
+        private DevExpress.XtraGrid.Columns.GridColumn 要求到货时间;
+        private DevExpress.XtraGrid.Columns.GridColumn 制造类型;
+        private DevExpress.XtraGrid.Columns.GridColumn 备注;
+        private DevExpress.XtraGrid.Columns.GridColumn 工艺;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem 查看工序ToolStripMenuItem;
+    }
+}

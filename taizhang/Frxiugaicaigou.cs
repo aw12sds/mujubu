@@ -1,0 +1,121 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Text;
+using System.Linq;
+using System.Windows.Forms;
+using DevExpress.XtraEditors;
+using System.IO;
+using mujubu.公共类;
+
+namespace mujubu.taizhang
+{
+    public partial class Frxiugaicaigou : DevExpress.XtraEditors.XtraForm
+    {
+        public Frxiugaicaigou()
+        {
+            InitializeComponent();
+        }
+        public string tuzhimingcheng;
+        public string tuzhileixing;
+        public string yonghu;
+        private byte[] tuzhifiles;//文件
+
+        private long fileSize = 0;//文件大小
+        private string fileName = null;//文件名字
+        private BinaryReader read = null;//二进制读取
+        public string id;
+        public string state;
+        string sqlbefore;
+        公共 公共 = new 公共();
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            if (state== "1"||state=="3"|| state == "73")
+            {
+                string sqlafter = "update tb_caigouliaodan  set 备注=" + txtbeizhu.Text + ",型号=" + txterp.Text.Trim() + ",工作令号=" + textEdit1.Text.Trim() + ",模具部交货日期=" + dateEdit1.Text.Trim() + ",项目名称=" + textEdit2.Text.Trim() + ",名称=" + textEdit3.Text.Trim() + " where id=" + id;
+                if (txtfujian.Text.Trim() == "")
+                {
+                    
+                    string sql2 = "update tb_caigouliaodan  set 备注='" + txtbeizhu.Text + "',型号='" + txterp.Text.Trim() + "',工作令号='" + textEdit1.Text.Trim() + "',模具部交货日期='" + dateEdit1.Text.Trim() + "',项目名称='" + textEdit2.Text.Trim() + "',名称='" + textEdit3.Text.Trim() + "' where id='" + id + "'";
+                    SQLhelp.ExecuteScalar(sql2, CommandType.Text);
+                    MessageBox.Show("修改成功");
+                    公共.添加修改记录(yonghu, "修改明细", sqlbefore + "--------------" + sqlafter, id);
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+                else
+                {
+                    string sql2 = "update tb_caigouliaodan  set 备注='" + txtbeizhu.Text + "',模具部交货日期='" + dateEdit1.Text.Trim() + "',附件=@pic,附件名称='" + tuzhimingcheng + "',附件类型='" + tuzhileixing + "',项目名称'=" + textEdit2.Text.Trim() + "',名称='" + textEdit3.Text.Trim() + "',型号='" + txterp.Text.Trim() + "',工作令号='" + textEdit1.Text.Trim() + "' where id='" + id + "'";
+                    SQLhelp.ExecuteNonquery(sql2, CommandType.Text, tuzhifiles);
+                    MessageBox.Show("修改成功");
+                    公共.添加修改记录(yonghu, "修改明细", sqlbefore + "--------------" + sqlafter, id);
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+
+                }
+
+            }else
+            {
+                MessageBox.Show("无权限编辑");
+            }
+
+           
+
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //打开对话框
+                OpenFileDialog dialog = new OpenFileDialog();
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    txtfujian.Text = dialog.FileName;
+                    FileInfo info = new FileInfo(@txtfujian.Text);
+                    //获得文件大小
+                    fileSize = info.Length;
+                    //提取文件名,三步走
+                    int index = info.FullName.LastIndexOf(".");
+                    fileName = info.FullName.Remove(index);
+                    fileName = fileName.Substring(fileName.LastIndexOf(@"\") + 1);
+                    tuzhimingcheng = fileName;
+                    //获得文件扩展名
+                    tuzhileixing = info.Extension.Replace(".", "");
+                    //把文件转换成二进制流
+                    tuzhifiles = new byte[Convert.ToInt32(fileSize)];
+                    FileStream file = new FileStream(txtfujian.Text, FileMode.Open, FileAccess.Read);
+                    read = new BinaryReader(file);
+                    read.Read(tuzhifiles, 0, Convert.ToInt32(fileSize));
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("选择文件时候发生了　　" + ex.Message);
+            }
+        }
+
+        private void Frxiugaicaigou_Load(object sender, EventArgs e)
+        {
+            string sql = "select * from tb_caigouliaodan where id='" + id + "'";
+            DataTable dt = SQLhelp.GetDataTable(sql, CommandType.Text);
+            txtbeizhu.Text = dt.Rows[0]["备注"].ToString();
+            dateEdit1.Text= dt.Rows[0]["模具部交货日期"].ToString();
+            txterp.Text= dt.Rows[0]["型号"].ToString();
+            textEdit1.Text= dt.Rows[0]["工作令号"].ToString();
+            state= dt.Rows[0]["当前状态"].ToString();
+            textEdit2.Text = dt.Rows[0]["项目名称"].ToString();
+            textEdit3.Text = dt.Rows[0]["名称"].ToString();
+            sqlbefore = "update tb_caigouliaodan  set 备注=" + txtbeizhu.Text + ",型号=" + txterp.Text.Trim() + ",工作令号=" + textEdit1.Text.Trim() + ",模具部交货日期=" + dateEdit1.Text.Trim() + " where id=" + id;
+
+        }
+
+        private void textEdit1_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
+}

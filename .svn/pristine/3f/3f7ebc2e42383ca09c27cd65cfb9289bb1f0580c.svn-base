@@ -1,0 +1,557 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{260DF3CF-06ED-4116-9FD3-0232219D665E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>mujubu</RootNamespace>
+    <AssemblyName>mujubu</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Aspose.Cells">
+      <HintPath>..\dll\Aspose.Cells.dll</HintPath>
+    </Reference>
+    <Reference Include="Aspose.Words">
+      <HintPath>..\dll\Aspose.Words.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar2, Version=14.1.0.0, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Images.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Mvvm.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v15.2.Core, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v15.2.Core, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpf.Core.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpf.Grid.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpf.Grid.v15.2.Core, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpf.Ribbon.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGrid.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="NetWorkLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\dll\NetWorkLib.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ThoughtWorks.QRCode">
+      <HintPath>..\dll\ThoughtWorks.QRCode.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrLogin.Designer.cs">
+      <DependentUpon>FrLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SQLhelp.cs" />
+    <Compile Include="taizhang\Addcaigou.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="taizhang\Addcaigou.Designer.cs">
+      <DependentUpon>Addcaigou.cs</DependentUpon>
+    </Compile>
+    <Compile Include="taizhang\addcaigounew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="taizhang\addcaigounew.Designer.cs">
+      <DependentUpon>addcaigounew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="taizhang\caigouerpshengpi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="taizhang\caigouerpshengpi.Designer.cs">
+      <DependentUpon>caigouerpshengpi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="taizhang\caigoutaizhang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="taizhang\caigoutaizhang.Designer.cs">
+      <DependentUpon>caigoutaizhang.cs</DependentUpon>
+    </Compile>
+ <Compile Include="taizhang\chakanbom1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="taizhang\chakanbom1.Designer.cs">
+      <DependentUpon>chakanbom1.cs</DependentUpon>
+    </Compile>
+<Compile Include="taizhang\edittaizhang1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="taizhang\edittaizhang1.Designer.cs">
+      <DependentUpon>edittaizhang1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="taizhang\edithetong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="taizhang\edithetong.Designer.cs">
+      <DependentUpon>edithetong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="taizhang\edittaizhang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="taizhang\edittaizhang.Designer.cs">
+      <DependentUpon>edittaizhang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="taizhang\edittuzhi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="taizhang\edittuzhi.Designer.cs">
+      <DependentUpon>edittuzhi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="taizhang\erpauto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="taizhang\erpauto.Designer.cs">
+      <DependentUpon>erpauto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="taizhang\erpwaixie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="taizhang\erpwaixie.Designer.cs">
+      <DependentUpon>erpwaixie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="taizhang\fahuoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="taizhang\fahuoForm.Designer.cs">
+      <DependentUpon>fahuoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="taizhang\fahuojilu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="taizhang\fahuojilu.Designer.cs">
+      <DependentUpon>fahuojilu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="taizhang\Frpiliangxinzeng.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="taizhang\Frpiliangxinzeng.Designer.cs">
+      <DependentUpon>Frpiliangxinzeng.cs</DependentUpon>
+    </Compile>
+    <Compile Include="taizhang\Frxinzengtaizhang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="taizhang\Frxinzengtaizhang.Designer.cs">
+      <DependentUpon>Frxinzengtaizhang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="taizhang\Frxiugaicaigou.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="taizhang\Frxiugaicaigou.Designer.cs">
+      <DependentUpon>Frxiugaicaigou.cs</DependentUpon>
+    </Compile>
+    <Compile Include="taizhang\liucheng.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="taizhang\liucheng.Designer.cs">
+      <DependentUpon>liucheng.cs</DependentUpon>
+    </Compile>
+    <Compile Include="taizhang\shaixuan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="taizhang\shaixuan.Designer.cs">
+      <DependentUpon>shaixuan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="taizhang\shengpi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="taizhang\shengpi.Designer.cs">
+      <DependentUpon>shengpi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="taizhang\shengpijilu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="taizhang\shengpijilu.Designer.cs">
+      <DependentUpon>shengpijilu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="taizhang\xiugaijilu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="taizhang\xiugaijilu.Designer.cs">
+      <DependentUpon>xiugaijilu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="taizhang\zhizaoleixing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="taizhang\zhizaoleixing.Designer.cs">
+      <DependentUpon>zhizaoleixing.cs</DependentUpon>
+    </Compile>
+ <Compile Include="taizhang\zhizaoleixing1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="taizhang\zhizaoleixing1.Designer.cs">
+      <DependentUpon>zhizaoleixing1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="taizhang\上传bom清单.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="taizhang\上传bom清单.Designer.cs">
+      <DependentUpon>上传bom清单.cs</DependentUpon>
+    </Compile>
+<Compile Include="taizhang\上传bom清单1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="taizhang\上传bom清单1.Designer.cs">
+      <DependentUpon>上传bom清单1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="taizhang\修改生产车间.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="taizhang\修改生产车间.Designer.cs">
+      <DependentUpon>修改生产车间.cs</DependentUpon>
+    </Compile>
+    <Compile Include="taizhang\修改图纸.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="taizhang\修改图纸.Designer.cs">
+      <DependentUpon>修改图纸.cs</DependentUpon>
+    </Compile>
+    <Compile Include="taizhang\施琴审批.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="taizhang\施琴审批.Designer.cs">
+      <DependentUpon>施琴审批.cs</DependentUpon>
+    </Compile>
+    <Compile Include="taizhang\无图纸退回.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="taizhang\无图纸退回.Designer.cs">
+      <DependentUpon>无图纸退回.cs</DependentUpon>
+    </Compile>
+    <Compile Include="公共类\Alertbox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="公共类\Alertbox.Designer.cs">
+      <DependentUpon>Alertbox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="公共类\公共.cs" />
+    <Compile Include="公共类\数据公用.cs" />
+    <Compile Include="客户\addclient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="客户\addclient.Designer.cs">
+      <DependentUpon>addclient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="客户\client.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="客户\client.Designer.cs">
+      <DependentUpon>client.cs</DependentUpon>
+    </Compile>
+    <Compile Include="客户\updateclient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="客户\updateclient.Designer.cs">
+      <DependentUpon>updateclient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="工艺\Formaddgongxu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="工艺\Formaddgongxu.Designer.cs">
+      <DependentUpon>Formaddgongxu.cs</DependentUpon>
+    </Compile>
+<Compile Include="工艺\Formaddgongxu1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="工艺\Formaddgongxu1.Designer.cs">
+      <DependentUpon>Formaddgongxu1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="工艺\Formaddmingchen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="工艺\Formaddmingchen.Designer.cs">
+      <DependentUpon>Formaddmingchen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="工艺\Formgongxuadd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="工艺\Formgongxuadd.Designer.cs">
+      <DependentUpon>Formgongxuadd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="工艺\Formlingjian.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="工艺\Formlingjian.Designer.cs">
+      <DependentUpon>Formlingjian.cs</DependentUpon>
+    </Compile>
+<Compile Include="工艺\Formlingjian1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="工艺\Formlingjian1.Designer.cs">
+      <DependentUpon>Formlingjian1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="工艺\shebei.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="工艺\shebei.Designer.cs">
+      <DependentUpon>shebei.cs</DependentUpon>
+    </Compile>
+    <Compile Include="工艺\shejigongyi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="工艺\shejigongyi.Designer.cs">
+      <DependentUpon>shejigongyi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="工艺\修改工艺.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="工艺\修改工艺.Designer.cs">
+      <DependentUpon>修改工艺.cs</DependentUpon>
+    </Compile>
+ <Compile Include="工艺\修改工艺1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="工艺\修改工艺1.Designer.cs">
+      <DependentUpon>修改工艺1.cs</DependentUpon>
+    </Compile>
+ <Compile Include="工艺\增加工序1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="工艺\增加工序1.Designer.cs">
+      <DependentUpon>增加工序1.cs</DependentUpon>
+    </Compile>
+ <Compile Include="工艺\修改工序内容和数量.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="工艺\修改工序内容和数量.Designer.cs">
+      <DependentUpon>修改工序内容和数量.cs</DependentUpon>
+    </Compile>
+ <Compile Include="工艺\删除工序.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="工艺\删除工序.Designer.cs">
+      <DependentUpon>删除工序.cs</DependentUpon>
+    </Compile>
+    <Compile Include="工艺\增加工序.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="工艺\增加工序.Designer.cs">
+      <DependentUpon>增加工序.cs</DependentUpon>
+    </Compile>
+    <Compile Include="工艺\新增设备.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="工艺\新增设备.Designer.cs">
+      <DependentUpon>新增设备.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrLogin.resx">
+      <DependentUpon>FrLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="taizhang\Addcaigou.resx">
+      <DependentUpon>Addcaigou.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="taizhang\addcaigounew.resx">
+      <DependentUpon>addcaigounew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="taizhang\caigouerpshengpi.resx">
+      <DependentUpon>caigouerpshengpi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="taizhang\caigoutaizhang.resx">
+      <DependentUpon>caigoutaizhang.cs</DependentUpon>
+    </EmbeddedResource>
+<EmbeddedResource Include="taizhang\chakanbom1.resx">
+      <DependentUpon>chakanbom1.cs</DependentUpon>
+    </EmbeddedResource>
+<EmbeddedResource Include="taizhang\edittaizhang1.resx">
+      <DependentUpon>edittaizhang1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="taizhang\edithetong.resx">
+      <DependentUpon>edithetong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="taizhang\edittaizhang.resx">
+      <DependentUpon>edittaizhang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="taizhang\edittuzhi.resx">
+      <DependentUpon>edittuzhi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="taizhang\erpauto.resx">
+      <DependentUpon>erpauto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="taizhang\erpwaixie.resx">
+      <DependentUpon>erpwaixie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="taizhang\fahuoForm.resx">
+      <DependentUpon>fahuoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="taizhang\fahuojilu.resx">
+      <DependentUpon>fahuojilu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="taizhang\Frpiliangxinzeng.resx">
+      <DependentUpon>Frpiliangxinzeng.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="taizhang\Frxinzengtaizhang.resx">
+      <DependentUpon>Frxinzengtaizhang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="taizhang\Frxiugaicaigou.resx">
+      <DependentUpon>Frxiugaicaigou.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="taizhang\liucheng.resx">
+      <DependentUpon>liucheng.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="taizhang\shaixuan.resx">
+      <DependentUpon>shaixuan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="taizhang\shengpi.resx">
+      <DependentUpon>shengpi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="taizhang\shengpijilu.resx">
+      <DependentUpon>shengpijilu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="taizhang\xiugaijilu.resx">
+      <DependentUpon>xiugaijilu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="taizhang\zhizaoleixing.resx">
+      <DependentUpon>zhizaoleixing.cs</DependentUpon>
+    </EmbeddedResource>
+ <EmbeddedResource Include="taizhang\zhizaoleixing1.resx">
+      <DependentUpon>zhizaoleixing1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="taizhang\上传bom清单.resx">
+      <DependentUpon>上传bom清单.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="taizhang\上传bom清单1.resx">
+      <DependentUpon>上传bom清单1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="taizhang\修改图纸.resx">
+      <DependentUpon>修改图纸.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="taizhang\修改生产车间.resx">
+      <DependentUpon>修改生产车间.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="taizhang\无图纸退回.resx">
+      <DependentUpon>无图纸退回.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="公共类\Alertbox.resx">
+      <DependentUpon>Alertbox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="客户\addclient.resx">
+      <DependentUpon>addclient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="客户\client.resx">
+      <DependentUpon>client.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="客户\updateclient.resx">
+      <DependentUpon>updateclient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="工艺\Formaddgongxu.resx">
+      <DependentUpon>Formaddgongxu.cs</DependentUpon>
+    </EmbeddedResource>
+<EmbeddedResource Include="工艺\Formaddgongxu1.resx">
+      <DependentUpon>Formaddgongxu1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="工艺\Formlingjian.resx">
+      <DependentUpon>Formlingjian.cs</DependentUpon>
+    </EmbeddedResource>
+<EmbeddedResource Include="工艺\Formlingjian1.resx">
+      <DependentUpon>Formlingjian1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="工艺\shebei.resx">
+      <DependentUpon>shebei.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="工艺\shejigongyi.resx">
+      <DependentUpon>shejigongyi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="工艺\修改工艺.resx">
+      <DependentUpon>修改工艺.cs</DependentUpon>
+    </EmbeddedResource>
+ <EmbeddedResource Include="工艺\修改工艺1.resx">
+      <DependentUpon>修改工艺1.cs</DependentUpon>
+    </EmbeddedResource>
+ <EmbeddedResource Include="工艺\增加工序1.resx">
+      <DependentUpon>增加工序1.cs</DependentUpon>
+    </EmbeddedResource>
+ <EmbeddedResource Include="工艺\修改工序内容和数量.resx">
+      <DependentUpon>修改工序内容和数量.cs</DependentUpon>
+    </EmbeddedResource>
+ <EmbeddedResource Include="工艺\删除工序.resx">
+      <DependentUpon>删除工序.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="工艺\增加工序.resx">
+      <DependentUpon>增加工序.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="工艺\新增设备.resx">
+      <DependentUpon>新增设备.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="dal\App.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

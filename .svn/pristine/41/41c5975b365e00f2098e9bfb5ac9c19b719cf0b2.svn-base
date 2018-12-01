@@ -1,0 +1,61 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using mujubu.工艺;
+using System.Windows.Forms;
+
+namespace mujubu.taizhang
+{
+    public partial class chakanbom1 : Form
+    {
+        public string yonghu;
+        public string id;
+        public DataTable dt1;
+        public DataTable dt2;
+        public chakanbom1(string id)
+        {
+            InitializeComponent();
+            this.id = id;
+        }
+        private void chakanbom1_Load(object sender, EventArgs e)
+        {
+            reload();
+        }
+        public void reload()
+        {
+            string sql3 = "Select 序号,编码,型号,名称,单位,数量,类型,项目工令号,时间,制造类型,备注 From tb_caigouliaodan  Where 定位='" + id + "'";
+            dt1 = SQLhelp.GetDataTable(sql3, CommandType.Text);
+            dt1.Columns.Add("工艺");
+
+            this.gridControl1.DataSource = dt1;
+            for(int i=0;i<dt1.Rows.Count;i++)
+            {
+                string sql = "select * from tb_mujubu_lingjian where 业务id='" + id + "'and 零件名称='"+dt1.Rows[i]["名称"].ToString()+"' ";
+                dt2 = SQLhelp.GetDataTable(sql, CommandType.Text);
+                if (dt2.Rows.Count == 0)
+                {
+                    dt1.Rows[i]["工艺"] = "不存在";
+                }
+                else dt1.Rows[i]["工艺"] = "存在";
+            }
+ 
+        }
+
+        private void 查看工序ToolStripMenuItem_Click(object sender, EventArgs e)
+        {   string lingjianmingcheng=Convert.ToString(this.gridView1.GetRowCellValue(this.gridView1.FocusedRowHandle, "名称"));
+            Formlingjian1 formlingjian1 = new Formlingjian1(id,lingjianmingcheng);
+            formlingjian1.yonghu = yonghu;
+            formlingjian1.ShowDialog();
+            return;
+
+            //var uid = Guid.NewGuid().ToString(); uuid
+
+        }
+    }
+}
+    
+
